@@ -9,11 +9,11 @@
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="about-content col-lg-12">
 				<h1 class="text-white">
-					Blog Details Page
+					{{posts.title}}
 				</h1>
 				<p class="text-white link-nav"><a href="{%url 'projectApp:index'%}">Home </a> <span
 						class="lnr lnr-arrow-right"></span><a href="{% url 'blog:home'%}">Blog </a> <span
-						class="lnr lnr-arrow-right"></span> <a href="{% url 'blog:single'%}"> Blog Details Page</a></p>
+						class="lnr lnr-arrow-right"></span> <a href="{% url 'blog:single' pid=posts.id%}"> {{posts.title}}</a></p>
 			</div>
 		</div>
 	</div>
@@ -39,11 +39,11 @@
 							<li><a href="#">Lifestyle</a></li>
 						</ul>
 						<div class="user-details row">
-							<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span
+							<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{posts.author.username}}</a> <span
 									class="lnr lnr-user"></span></p>
-							<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span
+							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{posts.published_date}}</a> <span
 									class="lnr lnr-calendar-full"></span></p>
-							<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span
+							<p class="view col-lg-12 col-md-12 col-6"><a href="#">{{posts.counted_views}}</a> <span
 									class="lnr lnr-eye"></span></p>
 							<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
 									class="lnr lnr-bubble"></span></p>
@@ -56,55 +56,13 @@
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-9">
-						<h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
+						<h3 class="mt-20 mb-20">{{pid}}</h3>
 						<p class="excert">
-							MCSE boot camps have its supporters and its detractors. Some people do not understand why
-							you should have to spend money on boot camp when you can get the MCSE study materials
-							yourself at a fraction.
+							{{posts.content}}
 						</p>
-						<p>
-							Boot camps have its supporters and its detractors. Some people do not understand why you
-							should have to spend money on boot camp when you can get the MCSE study materials yourself
-							at a fraction of the camp price. However, who has the willpower to actually sit through a
-							self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-						</p>
-						<p>
-							Boot camps have its supporters and its detractors. Some people do not understand why you
-							should have to spend money on boot camp when you can get the MCSE study materials yourself
-							at a fraction of the camp price. However, who has the willpower to actually sit through a
-							self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-						</p>
+						
 					</div>
-					<div class="col-lg-12">
-						<div class="quotes">
-							MCSE boot camps have its supporters and its detractors. Some people do not understand why
-							you should have to spend money on boot camp when you can get the MCSE study materials
-							yourself at a fraction of the camp price. However, who has the willpower to actually sit
-							through a self-imposed MCSE training.
-						</div>
-						<div class="row mt-30 mb-30">
-							<div class="col-6">
-								<img class="img-fluid" src="{% static 'img/blog/post-img1.jpg'%}" alt="">
-							</div>
-							<div class="col-6">
-								<img class="img-fluid" src="{% static 'img/blog/post-img2.jpg'%}" alt="">
-							</div>
-							<div class="col-lg-12 mt-30">
-								<p>
-									MCSE boot camps have its supporters and its detractors. Some people do not
-									understand why you should have to spend money on boot camp when you can get the MCSE
-									study materials yourself at a fraction of the camp price. However, who has the
-									willpower.
-								</p>
-								<p>
-									MCSE boot camps have its supporters and its detractors. Some people do not
-									understand why you should have to spend money on boot camp when you can get the MCSE
-									study materials yourself at a fraction of the camp price. However, who has the
-									willpower.
-								</p>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 				<div class="navigation-area">
 					<div class="row">
@@ -301,7 +259,7 @@
 									<img class="img-fluid" src="{% static 'img/blog/pp1.jpg'%}" alt="">
 								</div>
 								<div class="details">
-									<a href="{% url 'blog:single'%}">
+									<a href="{% url 'blog:single' pid=3%}">
 										<h6>Space The Final Frontier</h6>
 									</a>
 									<p>02 Hours ago</p>
@@ -312,7 +270,7 @@
 									<img class="img-fluid" src="{% static 'img/blog/pp2.jpg'%}" alt="">
 								</div>
 								<div class="details">
-									<a href="{% url 'blog:single'%}">
+									<a href="{% url 'blog:single' pid=3 %}">
 										<h6>The Amazing Hubble</h6>
 									</a>
 									<p>02 Hours ago</p>
@@ -323,7 +281,7 @@
 									<img class="img-fluid" src="{% static 'img/blog/pp3.jpg'%}" alt="">
 								</div>
 								<div class="details">
-									<a href="{% url 'blog:single'%}">
+									<a href="{% url 'blog:single' pid=3 %}">
 										<h6>Astronomy Or Astrology</h6>
 									</a>
 									<p>02 Hours ago</p>
@@ -334,7 +292,7 @@
 									<img class="img-fluid" src="{% static 'img/blog/pp4.jpg'%}" alt="">
 								</div>
 								<div class="details">
-									<a href="{% url 'blog:single'%}">
+									<a href="{% url 'blog:single' pid=3%}">
 										<h6>Asteroids telescope</h6>
 									</a>
 									<p>02 Hours ago</p>

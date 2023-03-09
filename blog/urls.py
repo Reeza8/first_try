@@ -4,7 +4,10 @@ from blog.views import *
 app_name='blog'
 
 urlpatterns = [
-    path('',home,name='home'),
-    path('single/',single,name='single'),
 
+    path('',home,name='home'),
+
+    path('<int:pid>',single2,name='single'),
+
+    
 ]
