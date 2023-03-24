@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from blog.models import Post
+from blog.models import Post,Category
 
 
 @admin.register(Post)
@@ -13,6 +13,6 @@ class PostAdmin(admin.ModelAdmin):
     empty_value_display = '-empty-'
     
 
-
+admin.site.register(Category)
 
 

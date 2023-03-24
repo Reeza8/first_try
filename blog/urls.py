@@ -9,5 +9,9 @@ urlpatterns = [
 
     path('<int:pid>',single2,name='single'),
 
+    path('category/<str:catname>',home,name='category'),
     
+    path('author/<str:author>',home,name='author'),
+
+    path('search/',search,name='search'),
 ]
