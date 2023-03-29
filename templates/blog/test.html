@@ -1,3 +1,6 @@
+{% load static%}
+{% load blog_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{syr.title}}</h1>
+    {% list.paginator.page(5) %} 
+   
+    {% for post in list %}
+    <h1>{{post.title}}</h1>
+    {% endfor %}
 </body>
 </html>

@@ -1,6 +1,6 @@
 from django import template
 from blog.models import Post,Category
-from datetime import datetime, timedelta
+from datetime import datetime
 import pytz
 register = template.Library()
 
@@ -18,11 +18,11 @@ def date(date):
 
 @register.filter
 def func(string,n=10):
-    return string[n:100]+"dddd"
+    return string[n:100]
 
 @register.inclusion_tag('blog/popular_Posts.html')
-def func2():
-    posts=Post.objects.filter(status=1).order_by("counted_views")[:4]
+def popular_Posts():
+    posts=Post.objects.filter(status=1).order_by("-counted_views")[:3]
     return {'posts':posts}
 
 @register.inclusion_tag('blog/Post_categories.html')

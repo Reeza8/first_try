@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import *
 from blog.models import Post
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from datetime import *
 import pytz
 
@@ -21,7 +22,15 @@ def home(request,**kwargs):
     if kwargs.get('catname')!=None:
         posts=posts.filter(category__name=kwargs['catname'])
     if kwargs.get('author')!=None:
-        posts=posts.filter(author__username=kwargs['author'])    
+        posts=posts.filter(author__username=kwargs['author']) 
+    posts=Paginator(posts,3)
+    page_number=request.GET.get('page')
+    try:
+        posts=posts.get_page(page_number)
+    except EmptyPage:
+        posts=posts.get_page(1)     
+    except PageNotAnInteger:
+        posts=posts.get_page(posts.num_pages)     
     content={'posts':posts}
     return render(request,'blog/blog-home.html',content)
 
@@ -32,6 +41,7 @@ def single2(request,pid):
     posts.save()
     list=Post.objects.all()
     result=[]
+    
     for i in range(len(list)):
         if(list[i]==posts):
             try:
@@ -44,14 +54,16 @@ def single2(request,pid):
                 result.append('')        
 
     content={'posts':posts,'list':result}
-    print(request.GET.get('s'))
+   
     return render(request,'blog/blog-single.html',content)
 
     
 
-def test(request,pid):
-    post=Post.objects.get(id=pid)
-    content={'syr':post}
+def test(request):
+    list=Post.objects.all()
+    list=Paginator(list,1)
+    list=list.get_page(3)
+    content={'list':list}
     return render(request,'blog/test.html',content)
 
 def search(request):

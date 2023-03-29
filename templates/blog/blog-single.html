@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
 {% load static%}
+{% load humanize %}
 {% load blog_tags %}
 {%block body%}
 
@@ -244,7 +245,7 @@
 						</form>
 					</div>
 					{% include 'blog/writer.html ' %}
-					{% func2 %}
+					{% popular_Posts %}
 					{% include 'blog/ads.html' %}
 					{% categories %}
 					<div class="single-sidebar-widget newsletter-widget">

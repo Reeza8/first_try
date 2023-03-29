@@ -1,6 +1,7 @@
 
 {% load static %}
 {% load blog_tags %}
+{% load humanize %}
 <div class="single-sidebar-widget popular-post-widget">
     <h4 class="popular-title">Popular Posts</h4>
     <div class="popular-post-list">
@@ -14,7 +15,7 @@
                     <a href="{% url 'blog:single' pid=post.id %}">
                         <h6>{{post.title}}</h6>
                     </a>
-                    <p>{% date post.published_date %} days ago</p>
+                    <p>{{post.created_date|naturaltime}}</p>
                 </div>
             </div>
 

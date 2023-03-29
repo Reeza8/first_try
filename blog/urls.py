@@ -14,4 +14,7 @@ urlpatterns = [
     path('author/<str:author>',home,name='author'),
 
     path('search/',search,name='search'),
+
+    path('test/',test)
+    
 ]
