@@ -1,5 +1,5 @@
 from django import template
-from blog.models import Post,Category
+from blog.models import Post,Category,Comment
 from datetime import datetime
 import pytz
 register = template.Library()
@@ -16,9 +16,9 @@ def date(date):
     now = datetime.now(tz_tehran)
     return (now-date).days
 
-@register.filter
-def func(string,n=10):
-    return string[n:100]
+@register.simple_tag()
+def comment_len(pid):
+    return Comment.objects.filter(post_id=pid).count()
 
 @register.inclusion_tag('blog/popular_Posts.html')
 def popular_Posts():

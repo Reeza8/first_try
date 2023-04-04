@@ -31,19 +31,42 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.humanize',
     'django.contrib.contenttypes',
+    'captcha',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'robots',
+    'taggit',
+    'django_summernote',
+    'debug_toolbar',
     'django.contrib.sitemaps',
     'projectApp.apps.ProjectappConfig',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    
 ]
+
 SITE_ID = 2
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# AUTH_USER_MODEL="accounts.models"
+
+ROBOTS_USE_SITEMAP = False
+
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,9 +74,57 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
+# summernote config
+
+SUMMERNOTE_THEME = 'bs5'
+
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
+   
+
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+
+    }
+    }
+
+
+
+
+
+X_FRAME_OPTIONS= 'SAMEORIGIN'
+
 
 ROOT_URLCONF = 'first_try.urls'
 
@@ -136,3 +207,10 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]

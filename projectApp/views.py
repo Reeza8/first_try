@@ -24,8 +24,8 @@ def contact(request):
             return HttpResponseRedirect('/')
         else:
             return HttpResponse('notvalid')
-       
-    return render(request,'projectApp/contact.html')
+    form=ContactForm()   
+    return render(request,'projectApp/contact.html',{'form':form})
 
 def elements(request):
     return render(request,'projectApp/elements.html')

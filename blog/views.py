@@ -1,10 +1,11 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import *
-from blog.models import Post
+from blog.models import Post,Comment
+from blog.forms import CommentForm
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from datetime import *
 import pytz
-
+from django.contrib import messages
 
 
 def home(request,**kwargs):
@@ -17,12 +18,14 @@ def home(request,**kwargs):
             post.status=1
             post.save()
 
-    
     posts=Post.objects.filter(status=1)
     if kwargs.get('catname')!=None:
         posts=posts.filter(category__name=kwargs['catname'])
     if kwargs.get('author')!=None:
         posts=posts.filter(author__username=kwargs['author']) 
+    if kwargs.get('tag_name')!=None:
+        posts=posts.filter(tags__name__in=[kwargs.get('tag_name')])
+
     posts=Paginator(posts,3)
     page_number=request.GET.get('page')
     try:
@@ -36,12 +39,26 @@ def home(request,**kwargs):
 
 
 def single2(request,pid):
+    
+    
+    if request.method=='POST':
+        form=CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your comment saved succefully') 
+        else:
+            messages.error(request, 'Your comment did not saved') 
+
+
     posts=get_object_or_404(Post,pk=pid,status=1)
+    #add counted view
     posts.counted_views+=1
     posts.save()
+   
+
+    #next and previos post
     list=Post.objects.all()
     result=[]
-    
     for i in range(len(list)):
         if(list[i]==posts):
             try:
@@ -53,7 +70,10 @@ def single2(request,pid):
             except:
                 result.append('')        
 
-    content={'posts':posts,'list':result}
+
+    comments=Comment.objects.filter(post_id=pid,status=True).order_by('-created_date')
+    form=CommentForm()
+    content={'posts':posts,'list':result,'comments':comments,'form':form}
    
     return render(request,'blog/blog-single.html',content)
 
