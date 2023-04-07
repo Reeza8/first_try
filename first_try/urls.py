@@ -32,6 +32,7 @@ urlpatterns = [
     path('admin/',admin.site.urls),
     path('',include('projectApp.urls')),
     path('blog/',include('blog.urls')),
+    path('resume/',include('resume.urls')),
     path('accounts2/',include('accounts.urls')),
      path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_confirm.html"), name='password_reset_confirm'),
@@ -42,7 +43,7 @@ urlpatterns = [
     path('__debug__/', include('debug_toolbar.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
-   path("password_reset", views.password_reset_request, name="password_reset")
+    path("password_reset", views.password_reset_request, name="password_reset")
     
     
 ]

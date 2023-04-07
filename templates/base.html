@@ -68,12 +68,11 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li><a href="#">My resume</a></li>
                         <li><a href="{%url 'projectApp:index'%}">Home</a></li>
                         <li><a href="{%url 'projectApp:about'%}">About</a></li>
                         <li><a href="{%url 'blog:home'%}">Blog</a></li>
                         <li><a href="{%url 'projectApp:contact'%}">Contact</a></li>
-                        
+                        <li><a href="{% url 'resume:index' %}">My resume</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>

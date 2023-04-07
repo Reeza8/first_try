@@ -1,0 +1,508 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="templatemo">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <title>Reza Resume</title>
+     <!--
+Stimulus Template
+http://www.templatemo.com/tm-498-stimulus
+-->
+     <link rel="stylesheet" href="{% static 'resume/css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'resume/css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'resume/css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'resume/css/templatemo-style.css' %}">
+
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+     
+
+     <!-- PRE LOADER -->
+
+     <div class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </div>
+
+
+     <!-- Navigation Section -->
+
+     <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+          <div class="container">
+
+               <!-- navbar header -->
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+                    <a href="{% url 'resume:index' %}" class="navbar-brand">REZA</a>
+               </div>
+
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#home" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" class="smoothScroll">About Me</a></li>
+                         <li><a href="#experience" class="smoothScroll">Experiences</a></li>
+                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </div>
+
+
+     <!-- Home Section -->
+
+     <section id="home" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="home-img"></div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="home-thumb">
+                              <div class="section-title">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.3s">welcome to my website</h4>
+                                   <h1 class="wow fadeInUp" data-wow-delay="0.6s">Hello, I am <strong>REZA</strong> and I'm so glad to see you here.</h1>
+
+
+                              </div>
+                         </div>
+                    </div>
+
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- About Section -->
+
+     <section id="about" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="about-thumb">
+                              <div class="wow fadeInUp section-title" data-wow-delay="0.4s">
+                                   <h1>About me</h1>
+
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p class="wow fadeInUp" data-wow-delay="0.9s">CE student of shahid rajaee teacher
+                                        training. interested in Programming and Web Disgning.</p>
+                                   <p class="wow fadeInUp" data-wow-delay="0.9s">Teacher of the conservatory in Tehran.Able 
+                                        to grasp new concepts quickly(completed the Django tutorial in half the time required)
+                                   </p>
+
+                                   <strong>Team Work</strong>
+                                   <span class="pull-right">9/10</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 90%;"></div>
+                                   </div>
+                                   <strong>Creativity</strong>
+                                   <span class="pull-right">8.5/10</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 85%;"></div>
+                                   </div>
+                                   <strong>Communication</strong>
+                                   <span class="pull-right">9.5/10</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 95%;"></div>
+                                   </div>
+                                   <strong>Openness to criticism</strong>
+                                   <span class="pull-right">9/10</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 90%;"></div>
+                                   </div>
+                              </div>
+
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                         <div class="background-image about-img"></div>
+                    </div>
+
+                    <div class="bg-yellow col-md-3 col-sm-6">
+                         <div class="skill-thumb">
+                              <div class="wow fadeInUp section-title color-white" data-wow-delay="1.2s">
+                                   <h1> Technical Skills</h1>
+                                   <p>
+                                        
+                                   </p>
+                              </div>
+
+                              <div class=" wow fadeInUp skills-thumb" data-wow-delay="1.6s">
+                                   <strong>Python,C#,C++</strong>
+                                   <span class="color-white pull-right">85%</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 85%;"></div>
+                                   </div>
+                                   <strong>OOP</strong>
+                                   <span class="color-white pull-right">100%</span>
+                                   <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar"
+                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: 100%;"></div>
+                                   </div>
+                              
+                              <strong>Django</strong>
+                              <span class="color-white pull-right">65%</span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="65"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                              </div>
+                              <strong>git</strong>
+                              <span class="color-white pull-right">90%</span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                              </div>
+                              <strong>Linux</strong>
+                              <span class="color-white pull-right">60%</span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                              </div>
+
+
+                              <strong>SQL</strong>
+                              <span class="color-white pull-right">70%</span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                              </div>
+
+                              
+                         </div>
+                         </div>
+
+                    </div>
+               </div>
+
+          </div>
+          </div>
+     </section>
+
+
+     <!-- Service Section -->
+
+     <!-- <section id="service" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="bg-yellow col-md-3 col-sm-6">
+                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="0.8s">
+                              <i class="fa fa-desktop"></i>
+                              <h3>Interface Design</h3>
+                              <p class="color-white">Phasellus vulputate tellus nec tortor varius elementum. Curabitur
+                                   at pulvinar ante.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.2s">
+                              <i class="fa fa-paper-plane"></i>
+                              <h3>Media Strategy</h3>
+                              <p class="color-white">Curabitur at pulvinar ante. Duis dui urna, faucibus eget felis eu,
+                                   iaculis congue sem.</p>
+                         </div>
+                    </div>
+
+                    <div class="bg-dark col-md-3 col-sm-6">
+                         <div class="wow fadeInUp color-white service-thumb" data-wow-delay="1.6s">
+                              <i class="fa fa-table"></i>
+                              <h3>Mobile App</h3>
+                              <p class="color-white">Mauris convallis eros massa, vitae euismod arcu tempus ut. Quisque
+                                   viverra iaculis.</p>
+                         </div>
+                    </div>
+
+                    <div class="bg-white col-md-3 col-sm-6">
+                         <div class="wow fadeInUp service-thumb" data-wow-delay="1.8s">
+                              <i class="fa fa-html5"></i>
+                              <h3>Coding</h3>
+                              <p>Mauris convallis eros massa, vitae euismod arcu tempus ut. Quisque viverra iaculis.</p>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section> -->
+
+
+     <!-- Experience Section -->
+
+     <section id="experience" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="background-image experience-img"></div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="color-white experience-thumb">
+                              <div class="wow fadeInUp section-title" data-wow-delay="1s">
+                                   <h1>My Experiences</h1>
+                                   <p class="color-white">Software Producing</p>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1s">
+                                   <div class="media-object media-left">
+                                        <i class="fa fa-laptop"></i>
+                                   </div>
+                                   <div class="media-body">
+                                        <h3 class="media-heading">Travel Website<small> 2023</small></h3>
+                                        <p class="color-white">Website that include blog section and its my first django project while learning it 
+                                        </p> 
+                                   </div>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1s">
+                                   <div class="media-object media-left">
+                                        <i class="fa fa-laptop"></i>
+                                   </div>
+                                   <div class="media-body">
+                                        <h3 class="media-heading">Drug Store System <small>2021</small></h3>
+                                        <p class="color-white">
+                                             The drug store program is connected to a
+                                             sql server database, C#, multiple forms and it’s about 1000 lines                               </p> 
+                                   </div>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1s">
+                                   <div class="media-object media-left">
+                                        <i class="fa fa-laptop"></i>
+                                   </div>
+                                   <div class="media-body">
+                                        <h3 class="media-heading">ONLINE Shop <small>2020</small>
+                                        </h3>
+                                        <p class="color-white">That reads and writes data in text files using OOP and it’s about 1800 lines
+                                        </p>
+                                   </div>
+                              </div>
+
+                             
+
+                              
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- Education Section -->
+
+     <section id="education" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="color-white education-thumb">
+                              <div class="wow fadeInUp section-title" data-wow-delay="0.8s">
+                                   <h1>My Education</h1>
+                                  <p></p>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                                   <div class="media-object media-left">
+                                        <a href="#" class="color-white">  <i class="fa fa-certificate" aria-hidden="true" ></i></a>
+                                   </div>
+                                   <div class="media-body">
+                                        <a href="#">  <h3 class="color-white">django tutorial<small> 2023</small>
+                                        </h3></a>
+                                   </div>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                                   <div class="media-object media-left">
+                                        <a href="https://quera.org/certificate/F2Brs5Jl/" class="color-white">  <i class="fa fa-certificate" aria-hidden="true"></i></a>
+                                   </div>
+                                   <div class="media-body">
+                                        <a href="https://quera.org/certificate/F2Brs5Jl/">  <h3 class="color-white">PRACTICAL TRAINING OF LINUX (FROM 0 TO Z)<small> 2022</small>
+                                        </h3></a>
+                                   </div>
+                              </div>
+                             
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                                   <div class="media-object media-left">
+                                        <a href=" https://quera.org/certificate/ovV31DQP/" class="color-white">  <i class="fa fa-certificate" aria-hidden="true"></i></a>
+                                   </div>
+                                   <div class="media-body">
+                                        <a href=" https://quera.org/certificate/ovV31DQP/">  <h3 class="color-white">Practical Training To Work With Git<small> 2022</small>
+                                        </h3></a>
+                                   </div>
+                              </div>
+
+                              <div class="wow fadeInUp color-white media" data-wow-delay="1.2s">
+                                   <div class="media-object media-left">
+                                        <a href=" https://quera.org/certificate/xQqTIUYS/" class="color-white">  <i class="fa fa-certificate" aria-hidden="true"></i></a>
+                                   </div>
+                                   <div class="media-body">
+                                        <a href=" https://quera.org/certificate/xQqTIUYS/">  <h3 class="color-white">Advanced Python Programming
+                                             & Object-oriented Thinking<small> 2022</small>
+                                        </h3></a>
+                                   </div>
+                              </div>
+                             
+                              
+
+                              
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="background-image education-img"></div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- Quotes Section -->
+
+
+
+
+     <!-- Contact Section -->
+
+     <section id="contact" class="parallax-section">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="contact-form">
+                              <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
+                                   <h1 class="color-white">Don't hesitate to reach out if you have any questions</h1>
+                              </div>
+
+                              <div id="contact-form">
+                                   <form action="{% url 'resume:index' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="wow fadeInUp" data-wow-delay="1s">
+                                             <input name="name" type="text" class="form-control" 
+                                                  placeholder="Your Name">
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay="1.2s">
+                                             <input name="email" type="email" class="form-control" 
+                                             placeholder="Your Email">
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay="1.4s">
+                                             <textarea name="message" rows="5" class="form-control" 
+                                             placeholder="Write your message..."></textarea>
+                                        </div>
+                                        <div class="wow fadeInUp col-md-6 col-sm-8" data-wow-delay="1.6s">
+                                             <input name="submit" type="submit" class="form-control" id="submit"
+                                             value="Send">
+                                        </div>
+                                   </form>
+                              </div>
+
+                         </div>
+                    </div>
+
+                    
+
+
+
+                    <div class="col-md-3 col-sm-6">
+                         <div class="background-image contact-img"></div>
+                    </div>
+
+                    <div class="bg-dark col-md-3 col-sm-6">
+                         <div class="contact-thumb">
+                              <div class="wow fadeInUp contact-info" data-wow-delay="0.6s">
+                                   <h3 class="color-white">Contact</h3>
+
+                              </div>
+
+                              <div class="wow fadeInUp contact-info" data-wow-delay="0.8s">
+
+                                   <p><i class="fa fa-phone"></i> (+98)9909150488</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a
+                                             href="mailto:hello@company.co">rezaashary8@gmail.com</a></p>
+                                   <p><i class="fa fa-globe"></i> <a
+                                             href="http://rezaghanbarzadeh.com/">rezaghanbarzadeh.com</a></p>
+                              </div>
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- Footer Section -->
+
+     <footer>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="wow fadeInUp footer-copyright" data-wow-delay="1.8s">
+                              <p>Copyright &copy; 
+
+                                   | Design: <a href="http://www.google.com/+templatemo" target="_parent">templatemo</a>
+                              </p>
+                         </div>
+                         <ul class="wow fadeInUp social-icon" data-wow-delay="1s">
+                              <li><a href="https://github.com/Reeza8" class="fa fa-github fa-3x"  target=”_blank” ></a></li>
+                              <li><a href="https://linkedin.com/in/reza-ghanbarzadeh-ashary-b80a86262" target=”_blank” class="fa fa-linkedin" aria-hidden="true" ></a></li>
+                              <li><a href="https://t.me/rEzAghnbrzdh" class="fa fa-paper-plane fa-5x" target=”_blank” class="color-black"  ></a></li>
+                         </ul>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+
+     <script src="{% static 'resume/js/jquery.js' %}"></script>
+     <script src="{% static 'resume/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'resume/js/jquery.parallax.js' %}"></script>
+     <script src="{% static 'resume/js/smoothscroll.js' %}"></script>
+     <script src="{% static 'resume/js/wow.min.js' %}"></script>
+     <script src="{% static 'resume/js/custom.js' %}"></script>
+                    
+
+</body>
+
+</html>
