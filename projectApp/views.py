@@ -3,6 +3,15 @@ from django.http import *
 from projectApp.forms import ContactForm,NewsLetterForm
 from django.contrib import messages
 
+
+#چون مقدار حجم فایل اپلودی زیر 5 مگ بود مجبور شدم فقط همین چندفایلی که تغییر دادم و بفرستم
+def as_view(request,resource):
+	return render(request,'soon.html')
+
+def IndexView(request, resource):
+	return render(request,'soon.html')
+
+
 def home(request):
     return render(request,'projectApp/index.html')
 

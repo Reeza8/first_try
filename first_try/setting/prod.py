@@ -3,11 +3,11 @@ from first_try.settings import *
 SECRET_KEY = 'django-insecure-z!!(j__l4^of&#hu(s+)=ocax$&rb-fai4ciww#tlt*5#^n17_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','rezaghanbarzadeh.com']
 
-# SITE_ID = 2
+SITE_ID = 2
 # INSTALLED_APPS = []
 
 
@@ -25,4 +25,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "statics",
 ]
 
-CSRF_COOKIE_SECURE=True
+# SECURE_SSL_REDIRECT = True
+
+# CSRF_COOKIE_SECURE=True
