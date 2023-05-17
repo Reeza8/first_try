@@ -30,21 +30,21 @@ sitemaps = {
 
 #چون مقدار حجم فایل اپلودی زیر 5 مگ بود مجبور شدم فقط همین چندفایلی که تغییر دادم و بفرستم
 urlpatterns = [
-    # path('admin/',admin.site.urls),
+     path('admin/',admin.site.urls),
      path('',include('projectApp.urls')),
-    # path('blog/',include('blog.urls')),
-    # path('resume/',include('resume.urls')),
-    # path('accounts2/',include('accounts.urls')),
-    #  path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'), name='password_reset_done'),
-    # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_confirm.html"), name='password_reset_confirm'),
-    # path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset_complete.html'), name='password_reset_complete'),      
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-    # name='django.contrib.sitemaps.views.sitemap'),
-    # path('robots.txt', include('robots.urls')),
-    # path('__debug__/', include('debug_toolbar.urls')),
-    # path('summernote/', include('django_summernote.urls')),
-    # path('captcha/', include('captcha.urls')),
-    # path("password_reset", views.password_reset_request, name="password_reset")
+    path('blog/',include('blog.urls')),
+    path('resume/',include('resume.urls')),
+    path('accounts2/',include('accounts.urls')),
+     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_confirm.html"), name='password_reset_confirm'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset_complete.html'), name='password_reset_complete'),      
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', include('robots.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
+    path('summernote/', include('django_summernote.urls')),
+    path('captcha/', include('captcha.urls')),
+    path("password_reset", views.password_reset_request, name="password_reset")
     
     
 ]
